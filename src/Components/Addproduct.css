@@ -1,0 +1,94 @@
+.form {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.name {
+    padding: 1rem;
+    width: 600px;
+    height: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+
+
+.h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    margin-top: 6rem;
+}
+
+.id {
+    padding: 1rem;
+    width: 600px;
+    height: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+.description {
+    padding: 1rem;
+    width: 600px;
+    height: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+
+}
+
+#float-label {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    position: relative;
+}
+
+#float-label label {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 12px;
+    color: #999;
+    pointer-events: none;
+    position: absolute;
+
+}
+
+
+#float-label .Active {
+    transform: translate(0, 2px) scale(0.75);
+}
+
+
+.imgurl {
+    padding: 1rem;
+    width: 600px;
+    height: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+.submitbutton {
+    padding: 1rem;
+    width: 635px;
+    height: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: large;
+    padding-bottom: 2rem;
+}

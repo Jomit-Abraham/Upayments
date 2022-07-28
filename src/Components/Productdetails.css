@@ -1,0 +1,68 @@
+.background {
+
+    width: 800px;
+    height: 800px;
+    max-height: 100%;
+    background-color: rgb(191, 191, 191);
+    max-width: 100rem;
+
+    margin: auto auto;
+    margin-top: 2rem;
+    animation: meals-appear 1s ease-out forwards;
+
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-style: italic;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    max-width: 100rem;
+    width: 300px;
+    height: 300px;
+    margin: auto auto;
+    margin-top: 2rem;
+    align-items: center;
+    animation: meals-appear 1s ease-out forwards;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+
+}
+
+.discriptipn {
+    max-width: 100rem;
+    width: 20%;
+}
+
+.h3 {
+    font-size: medium;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.deletebutton {
+    background-color: #ff0101;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
