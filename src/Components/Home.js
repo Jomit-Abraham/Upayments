@@ -1,63 +1,67 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './Home.css'
-import ProductDetails from './ProductDetails'
-import { Routes, Route, BrowserRouter as Router, Link, } from 'react-router-dom';
-
-
+import { Api_key } from './Constants';
+import LinesEllipsis from 'react-lines-ellipsis'
 
 function Home(props) {
-
-
+    const [catname, setCatName] = useState('')
     const [category, setCategory] = useState([])
-    const onClickListener = (Object) => {
+    var prodname = 'Products are ';
 
+    const onClickListener = (Object) => {
         props.functionnavigation(Object)
     }
 
     useEffect(() => {
-        axios.get(' https://62286b649fd6174ca82321f1.mockapi.io/case-study/categories/').then((response) => {
-            setCategory(response.data)
-            console.log(response.data)
+        axios.get(' https://upayments-studycase-api.herokuapp.com/api/categories/', { headers: { "Authorization": `Bearer ${Api_key}` } }).then((response) => {
+            setCategory(response.data.categories)
         })
     }, [])
 
-    const changeCategotyListener = () => { }
-
+    const changeCatHandler = (e) => {
+        setCatName(e.target.value)
+        props.filterhandler(e.target.value)
+    }
 
     return (
         <div className='row'>
             <div className='itemnames'>
                 {
-                    props.products.map((Object) => <h4 className='para'>{Object.name}</h4>)
+                    props.products.map((Object) => { prodname = prodname + Object.name + ' ,' })
                 }
 
-
+                <LinesEllipsis
+                    text={prodname}
+                    maxLine='1'
+                    ellipsis='...'
+                    trimRight
+                    basedOn='letters'
+                />
             </div>
-            <div >
+            <div style={{ display: 'flex' }}>
 
-                <select className='dropdown' onChange={() => { changeCategotyListener(Object.name) }} >
+                <h3 className='h3'>Filter</h3>
+                <select className='dropdown' onChange={changeCatHandler}>
                     {
-                        category.map((Object) => <option>{Object.name}</option>)
+                        category.map((Object) => <option value={Object.name}>{Object.name}</option>)
                     }
                 </select>
-
             </div>
 
             <div className='posters'>
                 {
                     props.products.map((Object) =>
                         <div className='parentposterbox' onClick={() => { onClickListener(Object) }} >
-                            <div className='posterbox'>
-
+                            <div key={Object._id} className='posterbox'>
                                 <img src={Object.avatar} alt={Object.name} className='poster' />
-
                             </div>
-                            <label><b>{Object.name}</b></label><br />
+                            <label ><b>{Object.name}</b></label><br />
                             <label><b>{'$' + Object.price}</b></label>
-                        </div>)
-
+                        </div>
+                    )
                 }
+
             </div>
 
         </div >

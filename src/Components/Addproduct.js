@@ -11,8 +11,6 @@ function Addproduct(props) {
     const [email, setEmail] = useState('')
     const [category, setCategory] = useState('')
 
-
-
     const namehandler = e => {
 
         setName(e.target.value)
@@ -47,12 +45,7 @@ function Addproduct(props) {
             }
 
         }
-
-
-
     }
-
-
 
     return (
         <form className='form' onSubmit={submitHandler} >
@@ -97,18 +90,12 @@ function Addproduct(props) {
                         <option value='Clothing' >Clothing</option>
                         <option value='Accessories' >Accessories</option>
 
-
                     </select>
                     <label className="Active">Categories</label>
 
                 </div>
             </div>
             <button className='submitbutton'>SUBMIT</button>
-
-
-
-
-
         </form >
     )
 }
